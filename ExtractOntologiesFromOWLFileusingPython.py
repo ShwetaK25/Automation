@@ -33,7 +33,7 @@ def get_ontologies(file_path, property_name):
 
 
 if __name__ == '__main__':
-              action = get_ontologies(r"C:\Shweta\xyz.owl", "ABC" )
+              answer = get_ontologies(r"C:\Shweta\xyz.owl", "ABC" )
           
          
                               
