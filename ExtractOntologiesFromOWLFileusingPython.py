@@ -19,23 +19,22 @@ def get_ontologies(file_path, property_name):
         
         if property_name == "Modality":
                 x="""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX owl: <http://www.w3.org/2002/07/owl#>
-                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-                SELECT * WHERE {?object owl:equivalentClass ?Action}
+                PREFIX owl: 
+                PREFIX rdfs: 
+                PREFIX xsd: 
+                SELECT * WHERE {?object owl:equivalentClass ?XYZ}
                 """
         else:
                 x="""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX owl: <http://www.w3.org/2002/07/owl#>
-                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-                SELECT * WHERE {?object rdfs:subClassOf?<http://gaius.isri.cmu.edu/2011/8/policy-base.owl#"""+property_name+""">}
+                PREFIX owl: 
+                PREFIX rdfs: 
+                PREFIX xsd: 
+                SELECT * WHERE {?object rdfs:subClassOf?<http://xyz.owl#>}
                 """
                 
         qres = g.query(x)
         property_name = []
         for sub in qres:
-                #print(str(sub).split("#")[1].split('\'')[0])
                 property_name.append(str(sub).split("#")[1].split('\'')[0])
                 
         return property_name
