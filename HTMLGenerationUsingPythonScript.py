@@ -1,7 +1,7 @@
-#href_yext = r"./NIST_Requirements_newKeywords_v2.xlsx#NIST POLICY!C3"
-href_nist = r"./NIST.SP.800-171r1-20180220.pdf#page=25"
-href_feature = r"./NIST.feature#text=unauthorized-usage-of-organizational-systems"
-href_excel = r"./NIST_Requirements_newKeywords_v2.xlsx#NIST POLICY!C9"
+
+href_doc = r"./ABC.SP.800-171r1-20180220.pdf#page=25"
+href_feature = r"./ABC.feature#text=shweta"
+href_excel = r"./ABC_Requirements.xlsx#MY POLICY!C9"
 
 str1 = '''
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ str1 = '''
                 <td>Feature file</td>
             </tr>
             <tr>
-               <td><a href = '''+href_nist+'''>doc</td>
+               <td><a href = '''+href_doc+'''>doc</td>
                <td><a href = '''+href_feature+'''>Feature file</td>
                <td><a href = '''+href_excel+''' target="_blank">Excel file</td>
                
