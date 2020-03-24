@@ -3,28 +3,19 @@ import csv
 import os
 import shutil
 counter=0
-base_dir = r'S:\NGP\Accurev_STP_4MAR\PRMSV\PRMSV_Build\logs'
+base_dir = r'c\abc.txt'
 
 
-###OR
-##try:
-##       base_dir = int(raw_input("Please enter the path of log files: "))
-##except :
-##       print "Oops!  That was no valid path.  Please enter valid path."
 
-with open('S:\NGP\sonkarv\csv\MAU_AUTO_Regression.csv', 'rb') as csvfile:
+with open('C:\csv\Regression.csv', 'rb') as csvfile:
    spamreader = csv.reader(csvfile)
    for row in spamreader:
-##       if row[0]=='ING2' and row[9]=='Passed':
-##           print (row)
-##           counter=counter+1
-##           print row
-##   print 'counter'+str(counter)
+
          filename = row[2]
          
          path=os.path.join(base_dir, filename)
          
-         dst=r'S:\NGP\sonkarv\csv\logs'
+         dst=r'C:\csv\logs'
          
          for root, dirs, files in os.walk(path):
              
