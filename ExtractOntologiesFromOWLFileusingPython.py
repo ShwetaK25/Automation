@@ -16,33 +16,24 @@ def get_ontologies(file_path, property_name):
         #output: output of the query
         g = Graph()
         g.parse(file_path)
-        
-        if property_name == "Modality":
-                x="""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX owl: 
-                PREFIX rdfs: 
-                PREFIX xsd: 
-                SELECT * WHERE {?object owl:equivalentClass ?XYZ}
-                """
-        else:
-                x="""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX owl: 
-                PREFIX rdfs: 
-                PREFIX xsd: 
-                SELECT * WHERE {?object rdfs:subClassOf?<http://xyz.owl#>}
-                """
+        x="""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX owl: 
+        PREFIX rdfs: 
+        PREFIX xsd: 
+        SELECT * WHERE {?object rdfs:subClassOf?<http://xyz.owl#>}
+        """
                 
         qres = g.query(x)
         property_name = []
         for sub in qres:
-                property_name.append(str(sub).split("#")[1].split('\'')[0])
+                property_name.append(str(sub).split("#")[1])
                 
         return property_name
 
 
 
 if __name__ == '__main__':
-              action = get_ontologies(r"C:\Shweta\xyz.owl", "Action" )
+              action = get_ontologies(r"C:\Shweta\xyz.owl", "ABC" )
           
          
                               
